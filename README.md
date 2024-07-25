@@ -4,7 +4,9 @@
 
 - [Aim](#aim)
 - [Data source](#data-source)
-- [Explonetary Data Analysis](#explonetary-data-analysis)
+- [Model Training](#model-training)
+- [Model Deployment](#model-deployment)
+- [Testing the Deployed Model](#testing-the-deployed-model)
 - [Results](results)
 
 
@@ -29,44 +31,32 @@ Kaggle: [Employee Attrition](https://www.kaggle.com/datasets/stealthtechnologies
 #### Data cleaning
 1. Loading the test.csv and train.csv
 2. Checking for missing values
-
-```
+  ```
 Employees_train_data.isnull().sum()
-```
+  ```   
+4. visulize the data
+5. prepare the data for model training
 
-### Explonetary Data Analysis
-
-### importing the libraries
-```
-import pandas as pd 
-import numpy as np
-import seaborn as sb
-import seaborn as sns
-import matplotlib.pyplot as plt
-
-from sklearn import metrics
-from sklearn.preprocessing import LabelEncoder
-from sklearn.model_selection import train_test_split
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import accuracy_score, classification_report
-from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
-```
-#### Data cleaning
-1.Checked for missing values. There data had no missing values which imply that the is no  need to clean the data
-
-```
-Employees_train_data.isnull().sum()
-```
-#### Data preprocessing
-- feature selection
-  
-```
-  columns=['Gender', 'Monthly Income', 'Job Role', 'Work-Life Balance', 'Job Satisfaction', 'Performance Rating', 'Overtime', 'Education Level', 'Marital Status', 'Job Level', 'Company Size',
-       'Remote Work', 'Leadership Opportunities', 'Innovation Opportunities', 'Company Reputation', 'Employee Recognition', 'Attrition']
-```
 ### Model training
+
+1. Connect to the Azure ML workspace
+2. import the cleaned dataset and split the dataset into test and train data
+3. Set up the AutoML experiment and the AutoML configuration
+4. Run AutoML
+5. Examine the results
+6. Save the best model
+
 ### Model deployment
+
+1. Set up an Azure Machine Learning environment to deploy the model
+2. Downloading	the scoring file
+3. Deploying the model
+
 ### Testing the deployed model
+
+You can test the deployed model using the R script provided in scripts/test_model.R. Make sure to replace the endpoint URL with your actual deployed model's URL.
+
+### Results
 
 
 
