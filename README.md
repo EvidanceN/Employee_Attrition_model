@@ -4,10 +4,12 @@
 
 - [Aim](#aim)
 - [Data source](#data-source)
+- [Data preparation](#data-preparation)
 - [Model Training](#model-training)
-- [Save the  model](#Save-the-model)
-- [Test the  model](#Test-the-model)
-- [Results](#Results)
+- [Save the  model](#save-the-model)
+- [Test the  model](#test-the-model)
+- [Results](#results)
+- [Recommandations](#recommandations)
   
 
 ### Aim
@@ -24,27 +26,64 @@ Kaggle: [Employee Attrition](https://www.kaggle.com/datasets/stealthtechnologies
 
 ### Tools
 
-- Azure Machine Learning Studio
-- AutoML
+- Kaggle
 - PowerBI - Creating reports
 
-#### Data cleaning
+#### Data preparation
 1. Import necessary libraries.
 2.  Read your dataset .
 3. Prepare data for training.
 
 ### Model training
-The model was trained using Support Vector Classifier (SVC) with a linear kernel (kernel='linear') because it works well with datasets with a large number of features
+The model was trained the Logistic Regression which is suitable for binary and multi-class classification problems.
 
-classifier = svm.SVC(kernel='linear')
+```
+ Employees_attrition_model=LogisticRegression()
+```
 
 ### Save the model
+save and load the model for future use
 
+```
+# Save the model
+joblib.dump(Employees_attrition_model, 'Employees_attrition_model.pkl')
 
+# Load the model (for later use)
+loaded_model = joblib.load('Employees_attrition_model.pkl')
+```
 
 ###  Test the Model
 
+use the loded model and new data to make a prediction
+
+```
+#Testing using new data
+new_data=(24,2,20,0,7500,0,2,0,2,0,0,0,1,1,1,90,0,0,0,0,2)
+
+# changing the input_data to numpy array
+new_data_as_numpy_array = np.asarray(new_data)
+
+# reshape the array as we are predicting for one instance
+new_data_reshaped = new_data_as_numpy_array.reshape(1,-1)
+
+prediction = loaded_model.predict(new_data_reshaped)
+print(prediction)
+
+if (prediction[0] == 0):
+  print('The employee will stay in the company')
+else:
+  print('The employee will leave the company')
+```
+
 ### Results
+
+An accuracy of 69.68% was achived using the trained model
+
+### Recommandations
+
+To improve the model 
+- Tune hyperparameters
+- Try different models
 
 
 
