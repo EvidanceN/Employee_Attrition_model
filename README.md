@@ -1,4 +1,4 @@
-# Employee attrition predictive model using Azure Machine Learning
+# Employee attrition predictive model 
 
 ## Table of Contents
 
@@ -6,9 +6,7 @@
 - [Data source](#data-source)
 - [Model Training](#model-training)
 - [Model Deployment](#model-deployment)
-- [Testing the Deployed Model](#testing-the-deployed-model)
-- [Results](results)
-
+  
 
 ### Aim
 
@@ -52,11 +50,7 @@ Employees_train_data.isnull().sum()
 2. Downloading	the scoring file
 3. Deploying the model
 
-### Testing the deployed model
 
-You can test the deployed model using the R script provided in scripts/test_model.R. Make sure to replace the endpoint URL with your actual deployed model's URL.
-
-### Results
 
 
 
