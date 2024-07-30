@@ -5,7 +5,9 @@
 - [Aim](#aim)
 - [Data source](#data-source)
 - [Model Training](#model-training)
-- [Model Deployment](#model-deployment)
+- [Save the  model](#Save-the-model)
+- [Test the  model](#Test-the-model)
+- [Results](#Results)
   
 
 ### Aim
@@ -27,29 +29,22 @@ Kaggle: [Employee Attrition](https://www.kaggle.com/datasets/stealthtechnologies
 - PowerBI - Creating reports
 
 #### Data cleaning
-1. Loading the test.csv and train.csv
-2. Checking for missing values
-  ```
-Employees_train_data.isnull().sum()
-  ```   
-4. visulize the data
-5. prepare the data for model training
+1. Import necessary libraries.
+2.  Read your dataset .
+3. Prepare data for training.
 
 ### Model training
+The model was trained using Support Vector Classifier (SVC) with a linear kernel (kernel='linear') because it works well with datasets with a large number of features
 
-1. Connect to the Azure ML workspace
-2. import the cleaned dataset and split the dataset into test and train data
-3. Set up the AutoML experiment and the AutoML configuration
-4. Run AutoML
-5. Examine the results
-6. Save the best model
+classifier = svm.SVC(kernel='linear')
 
-### Model deployment
+### Save the model
 
-1. Set up an Azure Machine Learning environment to deploy the model
-2. Downloading	the scoring file
-3. Deploying the model
 
+
+###  Test the Model
+
+### Results
 
 
 
