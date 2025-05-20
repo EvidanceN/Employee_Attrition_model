@@ -30,9 +30,12 @@ Kaggle: [Employee Attrition](https://www.kaggle.com/datasets/stealthtechnologies
 - PowerBI - Creating reports
 
 #### Data preparation
-1. Import necessary libraries.
-2.  Read your dataset .
-3. Prepare data for training.
+1. Data Cleaning.
+2.  Exploratory Data Analysis.
+3. Feature Engineering.
+4. Model Training.
+5. Evaluation.
+6. Model Saving and Inference.
 
 ### Model training
 The model was trained the Logistic Regression which is suitable for binary and multi-class classification problems.
